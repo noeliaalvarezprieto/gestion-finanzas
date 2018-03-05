@@ -1,0 +1,36 @@
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21" style="background-color:#0F73CF;" class="side-menu-gradient">
+    <div class="spacer" style="width:268px;height:28px;" id="menu-spacer6"></div>
+    <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+      <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+    </div>
+    <div class="spacer" style="width:268px;height:15px;" id="menu-spacer7"></div>
+    <ion-list id="menu-list1">
+      <ion-item color="none" menuClose="" on-click="goToIngresos()" id="menu-list-item1">
+        <ion-icon name="trending-up" item-left></ion-icon>
+        Ingresos
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToGastos()" id="menu-list-item2">
+        <ion-icon name="trending-down" item-left></ion-icon>
+        Gastos
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToBalance()" id="menu-list-item6">
+        <ion-icon name="pie" item-left></ion-icon>
+        Balance
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="width:268px;height:18px;" id="menu-spacer12"></div>
+    <ion-list id="menu-list5">
+      <ion-item color="none" menuClose="" on-click="goToSucursal()" id="menu-list-item9">
+        <ion-icon name="help-circle" item-left></ion-icon>
+        Sucursal
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToMiBanco()" id="menu-list-item10">
+        <ion-icon name="walk" item-left></ion-icon>
+        ¿Mi banco?
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

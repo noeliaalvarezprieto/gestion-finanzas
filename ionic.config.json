@@ -1,0 +1,8 @@
+{
+  "name": "gestion-finanzas",
+  "app_id": "6c0d4b62",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
