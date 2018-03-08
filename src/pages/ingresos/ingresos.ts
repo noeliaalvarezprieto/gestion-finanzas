@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,ToastController } from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
+import { NuevoPage} from '../nuevo/nuevo';
 
 @Component({
   selector: 'page-ingresos',
@@ -22,5 +23,8 @@ export class IngresosPage {
     
     });
   
+  }
+  nuevo(){
+    this.navCtrl.push(NuevoPage);
   }
 }

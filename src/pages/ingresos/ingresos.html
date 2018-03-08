@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color = "primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,8 +7,8 @@
       Ingresos
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="add-circle"></ion-icon>
+      <button (click)="nuevo()" ion-button>
+        <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

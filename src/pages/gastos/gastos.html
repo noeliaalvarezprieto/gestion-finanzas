@@ -1,8 +1,6 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <ion-navbar primary>
+    
     <ion-buttons start>
       <button ion-button icon-only>
         <ion-icon name="arrow-round-back"></ion-icon>
@@ -12,7 +10,7 @@
       Gastos
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button (click)="nuevo()">
         <ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
