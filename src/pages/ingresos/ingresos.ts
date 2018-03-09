@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController,ToastController } from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { NuevoPage} from '../nuevo/nuevo';
+import { ListaIngresosService } from '../../services/listaingresos/lista-ingresos.service';
+import { Observable } from 'rxjs/Observable';//from 'rxjs/Observable'
+import { Movimiento } from '../../models/movimiento/movimiento.model';
 
 @Component({
   selector: 'page-ingresos',
@@ -9,8 +12,22 @@ import { NuevoPage} from '../nuevo/nuevo';
 })
 export class IngresosPage {
 
-  constructor( private afAuth: AngularFireAuth, private toast: ToastController,public navCtrl: NavController) {
-  }
+    listaIngresos$: Observable<Movimiento[]>;
+  constructor( private afAuth: AngularFireAuth, private toast: ToastController,
+    public navCtrl: NavController, private lista: ListaIngresosService)
+     {
+      this.listaIngresos$ = this.lista
+      .getListaIngresos()
+      .snapshotChanges()
+      .map(
+       changes => {
+         return changes.map(c => ({
+           key: c.payload.key,
+           ...c.payload.val(),
+         }));
+       } 
+      );
+    }
   ionViewWillLoad(){
     this.afAuth.authState.subscribe(data => {
       if(data.email && data.uid){
@@ -27,4 +44,5 @@ export class IngresosPage {
   nuevo(){
     this.navCtrl.push(NuevoPage);
   }
+
 }

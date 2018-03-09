@@ -17,7 +17,7 @@
       <ion-label>
         Clase
       </ion-label>
-      <ion-select name="">
+      <ion-select [(ngModel)]= "movimiento.clase" [ngModelOptions]="{standalone:true}" name="">
         <ion-option>
           Gasto
         </ion-option>
@@ -27,44 +27,41 @@
       </ion-select>
     </ion-item>
   </form>
-  <h3 id="nuevo-heading1" style="color:#FFF;">
-    Concepto
-  </h3>
+  
   <form id="nuevo-form4">
     <ion-item id="nuevo-input6">
       <ion-label>
-        Input
+        Concepto
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input [(ngModel)]="movimiento.concepto" [ngModelOptions]="{standalone:true}" placeholder=""></ion-input>
     </ion-item>
   </form>
-  <h3 id="nuevo-heading2" style="color:#FFFF;">
-    Cantidad
-  </h3>
+  
   <form id="nuevo-form5">
     <ion-item id="nuevo-input7">
       <ion-label>
-        Input
+        Cantidad
       </ion-label>
-      <ion-input type="number" placeholder=""></ion-input>
+      <ion-input [(ngModel)]="movimiento.cantidad" [ngModelOptions]="{standalone:true}" placeholder=""></ion-input>
     </ion-item>
   </form>
-  <h3 id="nuevo-heading3" style="color:#FFF;">
-    Fecha
-  </h3>
+  
   <form id="nuevo-form6">
     <ion-item id="nuevo-input8">
       <ion-label>
-        Input
+        Fecha
       </ion-label>
-      <ion-input type="date" placeholder=""></ion-input>
+      <ion-datetime displayFormat="DD/MMM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="movimiento.fecha" [ngModelOptions]="{standalone:true}"></ion-datetime>
+    
+      
     </ion-item>
   </form>
+  {{movimiento|json}}
   <button id="nuevo-button4" ion-button color="dark" block>
     Imagen
   </button>
   <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
     <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
   </div>
-  <button ion-button block clear>Add</button>
+  <button ion-button ion-button color="dark" block clear (click)="addMovimiento(movimiento)">Add</button>
 </ion-content>

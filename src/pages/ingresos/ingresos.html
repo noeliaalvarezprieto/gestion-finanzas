@@ -13,4 +13,14 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page1" style="background-color:#0F73CF;"></ion-content>
+<ion-content padding id="page1" style="background-color:rgb(234, 239, 243);">
+  <ion-list>
+    <ion-item *ngFor="let movimiento of listaIngresos$ | async" 
+    detail-push navPush="EditarPage" [navParams] = "movimiento: movimiento">
+      {{movimiento.clase}}
+      {{movimiento.concepto}}
+      {{movimiento.cantidad}}
+      {{movimiento.fecha}}
+    </ion-item>
+  </ion-list>
+</ion-content>
