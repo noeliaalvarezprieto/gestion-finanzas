@@ -20,6 +20,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { ListaIngresosService } from '../services/listaingresos/lista-ingresos.service';
+import { EditarPage } from '../pages/editar/editar';
+import { ToastService } from '../services/toast/toast.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { ListaIngresosService } from '../services/listaingresos/lista-ingresos.s
     MiBancoPage,
     ErrorPage,
     NuevoPage
+    
   ],
   imports: [
     BrowserModule,
@@ -53,12 +56,14 @@ import { ListaIngresosService } from '../services/listaingresos/lista-ingresos.s
     MiBancoPage,
     ErrorPage,
     NuevoPage
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ListaIngresosService
+    ListaIngresosService,
+    ToastService
   ]
 })
 export class AppModule {}

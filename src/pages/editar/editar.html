@@ -6,13 +6,66 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>editar</ion-title>
+  <ion-navbar >
+    <ion-title>{{movimiento?.concepto}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
-</ion-content>
+<ion-content padding id="page11" style="background-color:#0F73CF;">
+    <form id="nuevo-form3">
+        <ion-item id="nuevo-select1">
+          <ion-label>
+            Clase
+          </ion-label>
+          <ion-select [(ngModel)]= "movimiento.clase" [ngModelOptions]="{standalone:true}" name="">
+            <ion-option>
+              Gasto
+            </ion-option>
+            <ion-option>
+              Ingreso
+            </ion-option>
+          </ion-select>
+        </ion-item>
+      </form>
+      
+      <form id="nuevo-form4">
+        <ion-item id="nuevo-input6">
+          <ion-label>
+            Concepto
+          </ion-label>
+          <ion-input [(ngModel)]="movimiento.concepto" [ngModelOptions]="{standalone:true}" placeholder=""></ion-input>
+        </ion-item>
+      </form>
+      
+      <form id="nuevo-form5">
+        <ion-item id="nuevo-input7">
+          <ion-label>
+            Cantidad
+          </ion-label>
+          <ion-input [(ngModel)]="movimiento.cantidad" [ngModelOptions]="{standalone:true}" placeholder=""></ion-input>
+        </ion-item>
+      </form>
+      
+      <form id="nuevo-form6">
+        <ion-item id="nuevo-input8">
+          <ion-label>
+            Fecha
+          </ion-label>
+          <ion-datetime displayFormat="DD/MMM/YYYY" pickerFormat="DD/MMM/YYYY" [(ngModel)]="movimiento.fecha" [ngModelOptions]="{standalone:true}"></ion-datetime>
+        
+          
+        </ion-item>
+      </form>
+      
+      <button id="nuevo-button4" ion-button color="dark" block>
+        Imagen
+      </button>
+      <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+        <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+      </div>
+      <button  ion-button color="dark" block clear (click)="guardarMovimiento(movimiento)">Guardar</button>
+      <button  ion-button color="danger" block clear (click)="eliminarMovimiento(movimiento)">Eliminar</button>
+ </ion-content>
+        

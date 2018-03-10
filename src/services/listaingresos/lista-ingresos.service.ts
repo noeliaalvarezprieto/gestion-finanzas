@@ -16,4 +16,10 @@ export class ListaIngresosService{
     addMovimiento(movimiento: Movimiento){
         return this.listaIngresosRef.push(movimiento);
     }
+    editarMovimiento(movimiento: Movimiento){
+        return this.listaIngresosRef.update(movimiento.key,movimiento);
+    }
+    eliminarMovimiento(movimiento: Movimiento){
+        return this.listaIngresosRef.remove(movimiento.key);
+    }
 }
