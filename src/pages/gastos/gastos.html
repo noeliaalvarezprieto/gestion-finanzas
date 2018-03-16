@@ -1,19 +1,29 @@
 <ion-header>
-  <ion-navbar primary>
+  
+    <ion-navbar color = "primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Gastos
+      </ion-title>
+      <ion-buttons end>
+        <button (click)="nuevo()" ion-button>
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
     
-    <ion-buttons start>
-      <button ion-button icon-only>
-        <ion-icon name="arrow-round-back"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>
-      Gastos
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="nuevo()">
-        <ion-icon name="add-circle"></ion-icon>
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page2" style="background-color:#0F73CF;"></ion-content>
+<ion-content padding id="page2" style="background-color:#0F73CF;">
+
+  <ion-list>
+    <ion-item *ngFor="let movimiento of listaIngresos$ | async" 
+    detail-push navPush="EditarPage" [navParams]="{movimiento:movimiento}">
+    <h3>{{movimiento.clase}}</h3>
+    <h2>{{movimiento.concepto}}</h2>
+     <h2>{{movimiento.cantidad}}</h2>
+     <h3>{{movimiento.fecha}}</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

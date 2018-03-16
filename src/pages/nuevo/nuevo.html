@@ -18,10 +18,10 @@
         Clase
       </ion-label>
       <ion-select [(ngModel)]= "movimiento.clase" [ngModelOptions]="{standalone:true}" name="">
-        <ion-option>
+        <ion-option value="Gasto">
           Gasto
         </ion-option>
-        <ion-option>
+        <ion-option value= "Ingreso">
           Ingreso
         </ion-option>
       </ion-select>
@@ -57,7 +57,7 @@
     </ion-item>
   </form>
   
-  <button id="nuevo-button4" ion-button color="dark" block>
+  <button id="nuevo-button4" ion-button color="dark" block (click)="takePhoto()">
     Imagen
   </button>
   <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">

@@ -23,6 +23,8 @@ import { ListaIngresosService } from '../services/listaingresos/lista-ingresos.s
 import { EditarPage } from '../pages/editar/editar';
 import { ToastService } from '../services/toast/toast.service';
 
+import { Camera} from '@ionic-native/camera'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -63,7 +65,8 @@ import { ToastService } from '../services/toast/toast.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListaIngresosService,
-    ToastService
+    ToastService,
+    Camera
   ]
 })
 export class AppModule {}

@@ -6,10 +6,14 @@ import { Movimiento } from './../../models/movimiento/movimiento.model';
 
 @Injectable()
 export class ListaIngresosService{
-    private listaIngresosRef = this.db.list<Movimiento>('gestion-finanzas');
+    
+  //  private listaIngresosRef = this.db.list<Movimiento>('gestion-finanzas');
+  private listaIngresosRef = this.db.list<Movimiento>('gestion-finanzas');
     constructor(private db:AngularFireDatabase){
-
+        
     }
+
+
     getListaIngresos(){
         return this.listaIngresosRef;
     }
