@@ -24,6 +24,9 @@ import { EditarPage } from '../pages/editar/editar';
 import { ToastService } from '../services/toast/toast.service';
 
 import { Camera} from '@ionic-native/camera'
+import { ClaseProvider } from '../providers/clase';
+
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { Camera} from '@ionic-native/camera'
     SucursalPage,
     MiBancoPage,
     ErrorPage,
-    NuevoPage
+    NuevoPage,
+    
     
   ],
   imports: [
@@ -66,7 +70,10 @@ import { Camera} from '@ionic-native/camera'
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListaIngresosService,
     ToastService,
-    Camera
+    Camera,
+    AngularFireDatabaseModule,
+    ClaseProvider
+    
   ]
 })
 export class AppModule {}

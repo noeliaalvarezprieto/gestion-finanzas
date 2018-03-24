@@ -7,8 +7,9 @@ import { Movimiento } from './../../models/movimiento/movimiento.model';
 @Injectable()
 export class ListaIngresosService{
     
+    clase="Ingreso";
   //  private listaIngresosRef = this.db.list<Movimiento>('gestion-finanzas');
-  private listaIngresosRef = this.db.list<Movimiento>('gestion-finanzas');
+  private listaIngresosRef = this.db.list<Movimiento>('/gestion-finanzas',ref =>this.clase? ref.orderByChild('clase').equalTo('Ingreso'):ref);
     constructor(private db:AngularFireDatabase){
         
     }

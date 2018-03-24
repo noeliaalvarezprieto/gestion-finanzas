@@ -9,6 +9,7 @@ import { Movimiento } from '../../models/movimiento/movimiento.model';
 @Component({
   selector: 'page-ingresos',
   templateUrl: 'ingresos.html'
+  
 })
 export class IngresosPage {
   movimiento:Movimiento;

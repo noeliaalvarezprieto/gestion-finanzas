@@ -5,19 +5,20 @@ import { NuevoPage} from '../nuevo/nuevo';
 import { Movimiento } from '../../models/movimiento/movimiento.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { ListaIngresosService } from '../../services/listaingresos/lista-ingresos.service';
+import { ListaGastosService } from '../../services/listagastos/lista-gastos.service';
 @Component({
   selector: 'page-gastos',
-  templateUrl: 'gastos.html'
+  templateUrl: 'gastos.html',
+  providers:[ListaGastosService]
 })
 export class GastosPage {
   movimiento: Movimiento;
-  listaIngresos$: Observable<Movimiento[]>;//listaIngresos$->listaGastos$
+  listaGastos$: Observable<Movimiento[]>;//listaIngresos$->listaGastos$
   constructor(private afAuth: AngularFireAuth, private toast: ToastController,public navCtrl: NavController,
-    private lista: ListaIngresosService) 
+    private lista: ListaGastosService) 
     {
-      this.listaIngresos$ = this.lista
-      .getListaIngresos()
+      this.listaGastos$ = this.lista
+      .getListaGastos()
       .snapshotChanges()
       .map(
        changes => {

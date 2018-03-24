@@ -18,7 +18,7 @@
 <ion-content padding id="page2" style="background-color:#0F73CF;">
 
   <ion-list>
-    <ion-item *ngFor="let movimiento of listaIngresos$ | async" 
+    <ion-item *ngFor="let movimiento of listaGastos$ | async" 
     detail-push navPush="EditarPage" [navParams]="{movimiento:movimiento}">
     <h3>{{movimiento.clase}}</h3>
     <h2>{{movimiento.concepto}}</h2>

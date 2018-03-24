@@ -5,6 +5,8 @@ import { ListaIngresosService } from '../../services/listaingresos/lista-ingreso
 import { IngresosPage } from '../ingresos/ingresos';
 import { ToastService } from '../../services/toast/toast.service';
 
+import { GastosPage } from '../gastos/gastos';
+
 /**
  * Generated class for the EditarPage page.
  *
@@ -22,22 +24,30 @@ export class EditarPage {
   
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  private lista:ListaIngresosService, private toast: ToastService) {
+  private lista:ListaIngresosService,  private toast: ToastService) {
   }
 
   ionViewWillLoad() {
     this.movimiento = this.navParams.get('movimiento');
   }
 guardarMovimiento(movimiento: Movimiento){
-  this.lista.editarMovimiento(this.movimiento).then(() => {
-    this.toast.show(`${movimiento.concepto} guardado!!`)
-    this.navCtrl.setRoot(IngresosPage);
-  });
+  
+  
+     this.lista.editarMovimiento(this.movimiento).then(() => {
+      this.toast.show(`${movimiento.concepto} guardado!!`)
+    
+         this.navCtrl.setRoot(IngresosPage);
+    
+     });
+  
 }
   eliminarMovimiento(movimiento: Movimiento){
-    this.lista.eliminarMovimiento(movimiento).then(() => {
-      this.toast.show(`${movimiento.concepto} borado!!`);
-      this.navCtrl.setRoot(IngresosPage);
-    });
+    
+       this.lista.eliminarMovimiento(movimiento).then(() => {
+       this.toast.show(`${movimiento.concepto} borrado!!`);
+       this.navCtrl.setRoot(IngresosPage);
+       });
+    
   }
+ 
 }
