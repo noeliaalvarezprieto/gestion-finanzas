@@ -7,23 +7,30 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page6" style="background-color:#0F73CF;">
-  <form id="signup-form2">
+  <form [formGroup]="myForm2" (ngSubmit)="register()" novalidate id="signup-form2">
     <ion-list id="signup-list3">
       
       <ion-item id="signup-input4">
         <ion-label floating>
           Email
         </ion-label>
-        <ion-input type="email"  [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}"></ion-input>
+        <ion-input formControlName="email"type="email"  [(ngModel)]="user.email" ></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm2.get('email').errors && myForm2.get('email').dirty">
+        <p color="danger" ion-text *ngIf="myForm2.get('email').hasError('required')">Debe rellenar este campo</p>
+        <p color="danger" ion-text *ngIf="myForm2.get('email').hasError('email')">No es un email</p>
+      </ion-item> 
       <ion-item id="signup-input5">
         <ion-label floating>
           Password
         </ion-label>
-        <ion-input type="password"  [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}"></ion-input>
+        <ion-input formControlName="password" type="password"  [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="myForm2.get('password').errors && myForm2.get('password').dirty">
+        <p color="danger" ion-text *ngIf="myForm2.get('password').hasError('required')">Debe rellenar este campo</p>
       </ion-item>
     </ion-list>
-    <button id="signup-button3" ion-button color="dark" (click)="register(user)">
+    <button id="signup-button3" ion-button block type="submit" [disabled]="myForm2.invalid" ion-button color="dark" (click)="register()">
       Sign up
     </button>
   </form>

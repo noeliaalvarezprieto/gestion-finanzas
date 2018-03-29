@@ -1,0 +1,51 @@
+// Custom icons
+// Overriding the ion-icon behavior
+// All custom icons will start with "appname-" prefix
+ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+       
+    }
+    // custom icons
+    &[class*="appname-customicon1"] {
+        mask-image: url(../assets/img/BBVA.svg);
+        width: 5em;
+        height: 5em;
+    }
+    &[class*="appname-customicon2"] {
+        mask-image: url(../assets/img/Logotipo_del_Banco_Santander.svg);
+        background-color: red;
+        width: 10em;
+        height: 10em;
+    }
+    &[class*="appname-customicon3"] {
+        mask-image: url(../assets/img/Sabadel.svg);
+        width: 10em;
+        height: 10em;
+        background-color: blue;
+    }
+    &[class*="appname-customicon4"] {
+        mask-image: url(../assets/img/la-caixa.svg);
+        width: 15em;
+        height: 15em;
+        background-color: black;
+    }
+    &[class*="appname-customicon5"] {
+        mask-image: url(../assets/img/EspanaDuero.svg);
+        width: 10em;
+        height: 10em;
+        background-color: green;
+    }
+    &[class*="appname-customicon6"] {
+        mask-image: url(../assets/img/logo_BANKIA.svg);
+        width: 10em;
+        height: 10em;
+        background-color: green;
+        background-image: green;
+    }
+}

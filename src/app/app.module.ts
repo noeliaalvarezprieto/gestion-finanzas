@@ -9,7 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { SucursalPage } from '../pages/sucursal/sucursal';
 import { MiBancoPage } from '../pages/mi-banco/mi-banco';
-import { ErrorPage } from '../pages/error/error';
+
 import { NuevoPage } from '../pages/nuevo/nuevo';
 
 
@@ -26,7 +26,7 @@ import { ToastService } from '../services/toast/toast.service';
 import { Camera} from '@ionic-native/camera'
 import { ClaseProvider } from '../providers/clase';
 
-
+import { InAppBrowser} from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { ClaseProvider } from '../providers/clase';
     SignupPage,
     SucursalPage,
     MiBancoPage,
-    ErrorPage,
+    
     NuevoPage,
     
     
@@ -60,7 +60,7 @@ import { ClaseProvider } from '../providers/clase';
     SignupPage,
     SucursalPage,
     MiBancoPage,
-    ErrorPage,
+    
     NuevoPage
    
   ],
@@ -72,7 +72,9 @@ import { ClaseProvider } from '../providers/clase';
     ToastService,
     Camera,
     AngularFireDatabaseModule,
-    ClaseProvider
+    ClaseProvider,
+    InAppBrowser,
+    
     
   ]
 })

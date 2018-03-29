@@ -2,7 +2,7 @@
   <ion-navbar color = "primary">
     
     <ion-buttons start>
-      <button ion-button icon-only>
+      <button ion-button (click)="back()" >
         <ion-icon name="arrow-round-back"></ion-icon>
       </button>
     </ion-buttons>
@@ -11,4 +11,24 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page7" style="background-color:#0F73CF;"></ion-content>
+<ion-content padding id="page7" style="background-color:#0F73CF;">
+  <button id="nuevo-button1" ion-button  block (click)="openWithCordovaBrowser('https://www.bbva.es')" >
+    <ion-icon name="appname-customicon1"></ion-icon>
+  </button>
+  <button id="nuevo-button2" ion-button color= "light" block (click)="openWithCordovaBrowser('https://www.bancosantander.es')">
+    <ion-icon name="appname-customicon2"></ion-icon>
+  </button>
+  <button id="nuevo-button3" ion-button color="light" block (click)="openWithCordovaBrowser('https://www.bancsabadell.com')">
+    <ion-icon name="appname-customicon3"></ion-icon>
+  </button>
+  <button id="nuevo-button4" ion-button color="light" block (click)="openWithCordovaBrowser('https://www.caixabank.es')">
+    <ion-icon name="appname-customicon4"></ion-icon>
+  </button>
+  <button id="nuevo-button5" ion-button color="light" block (click)="openWithCordovaBrowser('https://www.espanaduero.es')">
+    <ion-icon name="appname-customicon5"></ion-icon>
+  </button>
+  <button id="nuevo-button6" ion-button color="light" block (click)="openWithCordovaBrowser('https://www.bankia.es')">
+    <ion-icon name="appname-customicon6"></ion-icon>
+  </button>
+ 
+</ion-content>

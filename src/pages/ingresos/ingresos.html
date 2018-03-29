@@ -17,6 +17,7 @@
   <ion-list>
     <ion-item *ngFor="let movimiento of listaIngresos$ | async" 
     detail-push navPush="EditarPage" [navParams]="{movimiento:movimiento}">
+    
     <h3>{{movimiento.clase}}</h3>
     <h2>{{movimiento.concepto}}</h2>
      <h2>{{movimiento.cantidad}}</h2>

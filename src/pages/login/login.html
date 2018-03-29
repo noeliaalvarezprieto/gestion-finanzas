@@ -7,7 +7,7 @@
 </ion-header>
 <ion-content padding id="page5" style="background-color:#0F73CF;">
  
-  <form [formGroup]="myForm" (ngSubmit)="saveData()" novalidate id="login-form1">
+  <form [formGroup]="myForm" (ngSubmit)="login()" novalidate id="login-form1">
     <ion-list id="login-list2">
       <ion-item id="login-input1">
         <ion-label floating>
@@ -17,7 +17,7 @@
       </ion-item>
       <ion-item *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('email').hasError('required')">Debe rellenar este campo</p>
-        <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">It is not an email</p>
+        <p color="danger" ion-text *ngIf="myForm.get('email').hasError('email')">No es un email</p>
       </ion-item>
       <ion-item id="login-input2">
         <ion-label floating>
@@ -30,7 +30,7 @@
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer1"></div>
-    <button id="login-button1" ion-button color="dark" ion-button block type="submit" [disabled]="myForm.invalid" block style="color:#FFFF;" >
+    <button id="login-button1" ion-button color="dark" ion-button block type="submit" [disabled]="myForm.invalid" block style="color:#FFFF;" (click)="login()" >
       Log in
     </button>
     <button id="login-button2" ion-button color="dark" block style="color:#FFFF;" (click)="register()">

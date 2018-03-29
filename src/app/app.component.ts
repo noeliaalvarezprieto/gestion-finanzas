@@ -8,7 +8,7 @@ import { BalancePage } from '../pages/balance/balance';
 import { SucursalPage } from '../pages/sucursal/sucursal';
 import { MiBancoPage } from '../pages/mi-banco/mi-banco';
 import {LoginPage} from '../pages/login/login';
-import {ErrorPage} from '../pages/error/error';
+
 import {NuevoPage} from '../pages/nuevo/nuevo';
 import {SignupPage} from '../pages/signup/signup';
 

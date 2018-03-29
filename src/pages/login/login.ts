@@ -4,7 +4,7 @@ import { IngresosPage } from '../ingresos/ingresos';
 import { SignupPage} from '../signup/signup';
 import { User} from "../../models/user";
 import { AngularFireAuth} from 'angularfire2/auth'
-import { ErrorPage } from '../error/error';
+
 
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
@@ -23,7 +23,7 @@ export class LoginPage {
     });
   }
   saveData(){
-    alert(JSON.stringify(this.myForm.value));
+   // alert(JSON.stringify(this.myForm.value));
   }
   async login(user: User){
     try{
