@@ -28,6 +28,9 @@ import { ClaseProvider } from '../providers/clase';
 
 import { InAppBrowser} from '@ionic-native/in-app-browser';
 
+import { GoogleMaps } from '@ionic-native/google-maps';
+import { Geolocation} from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -74,6 +77,8 @@ import { InAppBrowser} from '@ionic-native/in-app-browser';
     AngularFireDatabaseModule,
     ClaseProvider,
     InAppBrowser,
+    GoogleMaps,
+    Geolocation,
     
     
   ]

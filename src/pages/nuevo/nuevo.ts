@@ -6,6 +6,8 @@ import { IngresosPage } from '../ingresos/ingresos';
 import { ToastService } from '../../services/toast/toast.service';
 import { Camera, CameraOptions, EncodingType } from '@ionic-native/camera';
 
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 @Component({
   selector: 'page-nuevo',
   templateUrl: 'nuevo.html'
@@ -16,12 +18,20 @@ export class NuevoPage {
     concepto: '',
     cantidad: 0,
     fecha:null,
-    imagen:''
+    imagen:''//aqui hay que guardar la referencia de storage
     
   };
 
+  myForm: FormGroup;
   constructor(public navCtrl: NavController, private lista: ListaIngresosService,
-    public navParams:NavParams, private toast: ToastService,private camera: Camera) {
+    public navParams:NavParams, private toast: ToastService,private camera: Camera,
+     public fb:FormBuilder) {
+      this.myForm = this.fb.group({
+        clase: ['', [Validators.required]],
+        concepto: ['', [Validators.required]],
+        cantidad: ['', [Validators.required]],
+        fecha: ['', [Validators.required]],
+      });
   }
   addMovimiento(movimiento: Movimiento){
     this.lista.addMovimiento(movimiento).then(ref => {
@@ -43,6 +53,7 @@ export class NuevoPage {
       correctOrientation:true
     }
      this.camera.getPicture(options).then((imageData)=>{
+       //enviarlo a storage,no a movimiento.imagen
         this.movimiento.imagen = "data:image/jpeg;base64,"+imageData;
      },(err)=>{
        console.log(err);

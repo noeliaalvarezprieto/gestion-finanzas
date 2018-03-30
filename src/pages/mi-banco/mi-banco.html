@@ -2,7 +2,7 @@
   <ion-navbar color = "primary">
     
     <ion-buttons start>
-      <button ion-button icon-only>
+      <button ion-button (click)="back()">
         <ion-icon name="arrow-round-back"></ion-icon>
       </button>
     </ion-buttons>
@@ -11,4 +11,6 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page8" style="background-color:#0F73CF;"></ion-content>
+<ion-content padding id="page8">
+  <div id="map"></div>
+</ion-content>
