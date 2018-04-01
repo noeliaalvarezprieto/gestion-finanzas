@@ -27,6 +27,7 @@
       </ion-item>
       <ion-item *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('password').hasError('required')">Debe rellenar este campo</p>
+        <p color="danger" ion-text *ngIf="myForm.get('password').hasError('minLenght')">Debe introducir min. 6 caracteres</p>
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="login-spacer1"></div>

@@ -13,16 +13,17 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   templateUrl: 'nuevo.html'
 })
 export class NuevoPage {
-  movimiento: Movimiento ={
+  myForm: FormGroup;
+  movimiento ={
     clase:'',
     concepto: '',
-    cantidad: 0,
-    fecha:null,
+    cantidad: '',
+    fecha:'',
     imagen:''//aqui hay que guardar la referencia de storage
     
-  };
+   };
 
-  myForm: FormGroup;
+ 
   constructor(public navCtrl: NavController, private lista: ListaIngresosService,
     public navParams:NavParams, private toast: ToastService,private camera: Camera,
      public fb:FormBuilder) {
@@ -33,7 +34,10 @@ export class NuevoPage {
         fecha: ['', [Validators.required]],
       });
   }
+  
+ 
   addMovimiento(movimiento: Movimiento){
+    this.movimiento=this.myForm.value;
     this.lista.addMovimiento(movimiento).then(ref => {
       this.toast.show(`${movimiento.concepto} añadido!!`)
       this.navCtrl.setRoot(IngresosPage,{key:ref.key});
