@@ -20,8 +20,8 @@
   <ion-list>
     <ion-item *ngFor="let movimiento of listaGastos$ | async" 
     detail-push navPush="EditarPage" [navParams]="{movimiento:movimiento}">
-    <ion-thumbnail item-start>
-      {{movimiento.imagen}}
+    <ion-thumbnail item-left>
+      <img [src]="sitio.foto">
     </ion-thumbnail>
     <h3>{{movimiento.clase}}</h3>
     <h2>{{movimiento.concepto}}</h2>

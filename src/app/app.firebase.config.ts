@@ -5,7 +5,7 @@ export const FIREBASE_CONFIG =  {
     authDomain: "gestion-finanzas.firebaseapp.com",
     databaseURL: "https://gestion-finanzas.firebaseio.com",
     projectId: "gestion-finanzas",
-    storageBucket: "",
+    storageBucket: "gs://gestion-finanzas.appspot.com/",//No tengo esto
     messagingSenderId: "1031341825135"
 };
   

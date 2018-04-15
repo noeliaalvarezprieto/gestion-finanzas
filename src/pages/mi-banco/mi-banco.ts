@@ -40,6 +40,90 @@ export class MiBancoPage {
     nombre:'CAJA ESPAÑA DUERO',
     lat:42.6000032 ,
     lng:-5.575819700000011
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.594962 ,
+    lng:-5.573173399999973
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.6029882 ,
+    lng:-5.570338300000003
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.60252070000001   ,
+    lng: -5.575865099999987
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.5976649  ,
+    lng:-5.57236510000007
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.5916339,
+    lng:-5.565239199999951
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.596909 ,
+    lng: -5.565460700000017
+  },{
+    nombre:'CAJA ESPAÑA DUERO',
+    lat:42.6000989,
+    lng:-5.562855899999931
+  },{
+    nombre:'BANKIA',
+    lat:42.5984448,
+    lng:-5.569419499999981
+  },{
+    nombre:'BANKIA',
+    lat:42.59714169999999 ,
+    lng:-5.575819700000011
+  },{
+    nombre:'BANKIA',
+    lat:42.60358000000001,
+    lng:-5.5793599999999515
+  },{
+    nombre:'BANKIA',
+    lat:42.5927114,
+    lng:-5.564918900000066
+  },{
+    nombre:'BANCO SABADELL',
+    lat:42.5963234,
+    lng:-5.607825000000048
+  },{
+    nombre:'BANCO SABADELL',
+    lat:42.6239474,
+    lng:-5.5639446000000135
+  },{
+    nombre:'BANCO SABADELL',
+    lat:42.6127359,
+    lng:-5.550520499999948
+  },{
+    nombre:'BANCO SABADELL',
+    lat:42.5870944 ,
+    lng:-5.568246899999963
+  },{
+    nombre:'BANCO SABADELL',
+    lat:42.5995382,
+    lng:-5.587293999999929
+  },{
+    nombre:'BANCO SANTANDER',
+    lat:42.5986475,
+    lng:-5.56167460000006
+  },{
+    nombre:'BANCO SANTANDER',
+    lat:42.59851,
+    lng:-5.571930000000066
+  },{
+    nombre:'BANCO SANTANDER',
+    lat:42.59757339999999,
+    lng:-5.567876800000022
+  },{
+    nombre:'BANCO SANTANDER',
+    lat:42.5931425,
+    lng:-5.572993600000018
+  },{
+    nombre:'BANCO SANTANDER',
+    lat:42.6045555,
+    lng:-5.562557800000036
   }]
   constructor(public navCtrl: NavController,public geolocation: Geolocation,
   private platform: Platform) {
@@ -52,6 +136,7 @@ export class MiBancoPage {
   initPage() {
     this.geolocation.getCurrentPosition().then(result => {
       this.loadMap(result.coords.latitude,result.coords.longitude);
+      //FALTA SAN ANDRES Y TROBAJO
     })
   }
  

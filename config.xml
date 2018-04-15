@@ -40,6 +40,7 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <framework src="com.android.support:multidex:1.0.3" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -85,10 +86,11 @@
     <plugin name="cordova-plugin-camera" spec="^4.0.2" />
     <allow-navigation href="http://192.168.0.193:8100" />
     <allow-navigation href="http://192.168.119.1:8100" />
-    <engine name="android" spec="7.0.0" />
-    <engine name="ios" spec="4.5.4" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.11.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <allow-navigation href="http://192.168.0.192:8100" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <engine name="android" spec="7.0.0" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="browser" spec="5.0.3" />
 </widget>

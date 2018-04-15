@@ -6,16 +6,21 @@ import { ListaIngresosService } from '../../services/listaingresos/lista-ingreso
 import { Observable } from 'rxjs/Observable';//from 'rxjs/Observable'
 import { Movimiento } from '../../models/movimiento/movimiento.model';
 
+import firebase from 'firebase';//
+import { AngularFireDatabase } from "angularfire2/database";
 @Component({
   selector: 'page-ingresos',
   templateUrl: 'ingresos.html'
   
 })
 export class IngresosPage {
-  movimiento:Movimiento;
+  imageSource;
+ // movimientoImagen;
+ // movimiento:Movimiento;
     listaIngresos$: Observable<Movimiento[]>;
   constructor( private afAuth: AngularFireAuth, private toast: ToastController,
-    public navCtrl: NavController, public navParams:NavParams, private lista: ListaIngresosService)
+    public navCtrl: NavController, public navParams:NavParams,
+     private lista: ListaIngresosService,private db:AngularFireDatabase)
      {
       this.listaIngresos$ = this.lista
       .getListaIngresos()
@@ -28,6 +33,8 @@ export class IngresosPage {
          }));
        } 
       );
+     // this.imageSource= 'butterfly';//provisional
+     // this.getPhotoURL();
     }
   ionViewWillLoad(){
     //this.afAuth.authState.subscribe(data => {
@@ -42,6 +49,12 @@ export class IngresosPage {
   //  });
   
   }
+ // getPhotoURL(){
+   // firebase.storage().ref().child( this.imageSource+'.jpg').getDownloadURL()
+   // .then((url)=>{
+   //   this.movimientoImagen= url;
+   // })
+ // }
   nuevo(){
     this.navCtrl.push(NuevoPage);
   }

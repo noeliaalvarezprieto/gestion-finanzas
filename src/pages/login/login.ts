@@ -45,13 +45,20 @@ export class LoginPage {
  register(){
   this.navCtrl.push(SignupPage);
 }
+obtenerDatos(){
+  this.myForm = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['',  [Validators.required,Validators.pattern(/^[a-z0-9_-]{6,18}$/),Validators.minLength(6)]],
+  });
+}
  async login(user:User){
+ // this.obtenerDatos();
   this.afAuth.auth.signInWithEmailAndPassword(this.myForm.get('email').value,this.myForm.get('password').value)
   .then(user => {
     this.navCtrl.setRoot(IngresosPage);
   }, error => {
     this.toast.create({
-      message:`Datos erróneos`,
+      message:`datos no válidos`,
       duration:5000
      
     }).present();
