@@ -13,7 +13,11 @@
   
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
-
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+     // Load the Visualization API and the corechart package.
+     google.charts.load('current', {'packages':['corechart']});
+  </script>
   <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
@@ -38,6 +42,9 @@
        It contains all of the dependencies in node_modules -->
   <script src="build/vendor.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdhT-vGhIKUvjOxyti1vCslD3JaMPiYF0"></script>
+
+ 
+
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 

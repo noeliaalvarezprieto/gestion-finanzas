@@ -16,6 +16,7 @@ import { IngresosPage } from '../pages/ingresos/ingresos';
 
 
 
+
 @Component({
   templateUrl: 'app.html'
 })

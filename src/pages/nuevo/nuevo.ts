@@ -61,8 +61,9 @@ export class NuevoPage {
          }
         const result =  await this.camera.getPicture(options);
         const image = `data:image/jpeg;base64,${result}`;
-        const pictures = storage().ref('imagen');//envia img a storage
-        pictures.putString(image,'data_url');
+        const pictures = storage().ref('this.movimiento.concepto');//envia img a storage 
+        pictures.putString(image,'data_url');//ESTE NOMBRE SE SOBREESCRIBE
+        //EL PROBLEMA ESTA EN MOSTRAR,ALMACENA BIEN
      
       }
       catch (e){

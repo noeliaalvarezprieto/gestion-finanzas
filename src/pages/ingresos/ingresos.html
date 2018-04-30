@@ -18,7 +18,7 @@
     <ion-item *ngFor="let movimiento of listaIngresos$ | async" 
     detail-push navPush="EditarPage" [navParams]="{movimiento:movimiento}">
     <ion-thumbnail item-left>
-      <img src=https://firebasestorage.googleapis.com/v0/b/gestion-finanzas.appspot.com/o/{{movimiento.imagen}}.jpg?alt=media&token=dbd3af64-f847-4d65-9f12-24c82544d04a>
+      <img src="https://firebasestorage.googleapis.com/v0/b/gestion-finanzas.appspot.com/o/{{movimiento.concepto}}.jpg?alt=media&token=9524e38d-7ca2-44a5-81f4-decc32b6e3d8">
     </ion-thumbnail>
     <h3>{{movimiento.clase}}</h3>
     <h2>{{movimiento.concepto}}</h2>

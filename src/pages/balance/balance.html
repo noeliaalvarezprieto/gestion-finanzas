@@ -15,5 +15,23 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3" style="background-color:#0F73CF;">
-  <canvas #linecanvas></canvas>
+  <mat-form-field>
+    <mat-select  [(value)]="movimiento.clase" name="clase" id="clase" background-color="white">
+      <mat-option value="Gasto">Gasto</mat-option>
+      <mat-option value="Ingreso">Ingreso</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button mat-raised-button color="dark" (click)="saveEntry()">Save Entry</button>
+  <ngx-charts-pie-chart *ngIf = "chartdata"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="claseData"
+      [legend]="showLegend"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      (select)="onSelect($event)">
+    </ngx-charts-pie-chart>
+
 </ion-content>

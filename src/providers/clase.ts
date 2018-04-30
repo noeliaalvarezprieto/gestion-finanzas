@@ -8,6 +8,7 @@ import { Movimiento } from './../models/movimiento/movimiento.model';
 export class ClaseProvider {
     clase;
       private listaTotalRef = this.db.list('gestion-finanzas',ref => ref.orderByChild('clase'));
+      
     constructor( private db:AngularFireDatabase) {
 
     }
@@ -15,4 +16,6 @@ export class ClaseProvider {
     getListaTotal(){
         return this.listaTotalRef.valueChanges();
     }
+    
+   
 }

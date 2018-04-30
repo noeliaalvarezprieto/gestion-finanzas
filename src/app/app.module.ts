@@ -20,6 +20,7 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule} from 'angularfire2/auth';
 import { AngularFireDatabaseModule} from 'angularfire2/database';
 import { ListaIngresosService } from '../services/listaingresos/lista-ingresos.service';
+import {ListaGastosService} from '../services/listagastos/lista-gastos.service'
 import { EditarPage } from '../pages/editar/editar';
 import { ToastService } from '../services/toast/toast.service';
 
@@ -30,6 +31,13 @@ import { InAppBrowser} from '@ionic-native/in-app-browser';
 
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Geolocation} from '@ionic-native/geolocation';
+
+import { VoteService} from '../services/vote/vote.service';
+
+import { MatSelectModule,MatButtonModule,MatRadioModule} from '@angular/material';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import { AngularFirestoreModule} from 'angularfire2/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -51,7 +59,13 @@ import { Geolocation} from '@ionic-native/geolocation';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatRadioModule,
+    NgxChartsModule,
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -72,6 +86,7 @@ import { Geolocation} from '@ionic-native/geolocation';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ListaIngresosService,
+    ListaGastosService,
     ToastService,
     Camera,
     AngularFireDatabaseModule,
@@ -79,6 +94,8 @@ import { Geolocation} from '@ionic-native/geolocation';
     InAppBrowser,
     GoogleMaps,
     Geolocation,
+    VoteService,
+    AngularFirestoreModule,
     
     
   ]
