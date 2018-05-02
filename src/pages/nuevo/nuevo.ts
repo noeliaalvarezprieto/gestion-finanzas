@@ -60,10 +60,11 @@ export class NuevoPage {
           correctOrientation:true
          }
         const result =  await this.camera.getPicture(options);
-        const image = `data:image/jpeg;base64,${result}`;
-        const pictures = storage().ref('this.movimiento.concepto');//envia img a storage 
-        pictures.putString(image,'data_url');//ESTE NOMBRE SE SOBREESCRIBE
-        //EL PROBLEMA ESTA EN MOSTRAR,ALMACENA BIEN
+        this.movimiento.imagen = `data:image/jpeg;base64,${result}`;
+         const nameImage=this.movimiento.concepto+'.jpg';
+        const pictures = storage().ref(nameImage);//envia img a storage 
+        pictures.putString(this.movimiento.imagen,'data_url');//
+        //EL PROBLEMA ESTA EN MOSTRAR,ALMACENA BIEN??
      
       }
       catch (e){
